@@ -9,16 +9,52 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 20px;
+            padding: 0;
         }
         h1 {
             color: #333;
+            font-size: 2em; /* Larger base size for readability */
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        /* Make iframe responsive */
+        .calendar-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto; /* Center it */
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 600px; /* Default height for desktop */
+            border: 0;
+        }
+        /* Media query for mobile devices */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em; /* Smaller header on mobile */
+            }
+            p {
+                font-size: 1em;
+            }
+            iframe {
+                height: 400px; /* Reduce height on mobile */
+            }
+            body {
+                margin: 10px; /* Less margin on small screens */
+            }
         }
     </style>
 </head>
 <body>
     <h1>Boat Rental Availability Calendar</h1>
     <p>Check the calendar below to see when the boat is available for rent!</p>
-    <!-- Google Calendar iframe cod -->
-    <iframe src="https://calendar.google.com/calendar/embed?src=mazzelboot%40gmail.com&ctz=Europe%2FAmsterdam" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <div class="calendar-container">
+        <!-- Replace with your actual iframe src -->
+        <iframe src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=America/New_York" frameborder="0" scrolling="no"></iframe>
+    </div>
 </body>
 </html>
